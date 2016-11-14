@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<library>
+    <library-name>Shazam.lib</library-name>
+    <!--Default file extension for the binary files is jpl; Other option is bin.-->
+    <jpl-binary-filename-extension>jpl</jpl-binary-filename-extension>
+</library>

@@ -1,0 +1,19 @@
+// For use as the TM hook function on the distributors table view for
+// the Distributor Orders screen.
+
+// The distributor ID was hidden if "NEW" was selected from the Select
+// Distributor screen. The distributor ID is not filled in by the user,
+// but is automatically generated as part of the Save.  Therefore, it is
+// hidden until the value has been generated and filled in at the end of
+// the Save. This proc recognizes the transaction manager post_save event
+// and unhides the two hidden fields.
+
+proc tm_events_clt(event_num)
+{
+    if (event_num == TM_POST_SAVE)
+    {
+	distrib_id->hidden=PV_NO
+	LDistrib_id->hidden=PV_NO
+    }
+    return TM_PROCEED
+}
